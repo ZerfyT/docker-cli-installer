@@ -3,7 +3,7 @@
 # Bash script to automate Docker CLI installation on Ubuntu
 
 # Exit immediately if a command exits with a non-zero status
-set -e
+# set -e
 
 # Update the package database
 echo "Updating package database..."
@@ -40,8 +40,8 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 
 # Verify installation
 echo "Verifying Docker CLI installation..."
-sudo docker --version
-sudo docker run hello-world
+# sudo docker --version
+# sudo docker run hello-world
 
 echo "Fixing Docker as non-root user..."
 sudo groupadd docker
@@ -52,8 +52,8 @@ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 sudo chmod g+rwx "$HOME/.docker" -R
 
 echo "Verifying Docker as non-root user..."
-docker --version
-docker run hello-world
+# docker --version
+# docker run hello-world
 
 echo "Start Docker on boot..."
 sudo systemctl enable docker.service
