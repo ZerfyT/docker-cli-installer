@@ -18,13 +18,13 @@ This repository contains a bash script to automate the installation of Docker CL
 2. Make the script executable:
 
     ```bash
-    sudo chmod +x docker_install.sh
+    sudo chmod +x install.sh
     ```
 
 3. Run the script:
 
    ```bash
-   ./docker_install.sh
+   ./install.sh
    ```
 
 ## Troubleshooting
@@ -38,7 +38,7 @@ This repository contains a bash script to automate the installation of Docker CL
 - If the script encounters an error, try running it with the set -x option for detailed output:
   
     ```bash
-    bash -x docker_install.sh
+    bash -x install.sh
     ```
 
 ## License
