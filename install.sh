@@ -44,11 +44,10 @@ echo "Verifying Docker CLI installation..."
 # sudo docker run hello-world
 
 echo "Fixing Docker as non-root user..."
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
+sudo groupadd docker 2>/dev/null || echo "Group 'docker' already exists"
+sudo usermod -aG docker $USER || true
 mkdir -p /home/"$USER"/.docker
-sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R 
 sudo chmod g+rwx "$HOME/.docker" -R
 
 echo "Verifying Docker as non-root user..."
